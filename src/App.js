@@ -7,16 +7,12 @@ import completedTask from './components/CompletedTasks';
 
 function App() {
   const [data, setData] = useState("");
-  // const [updated, setUpdated] = useState("");
   const [array, setarray] = useState([]);
   const [taskComplete, settaskComplete] = useState([]);
-  // const [imp, setInp] = useState([]);
   const [clickedInput, setclickedInput] = useState("");
   const [newInputValue, setnewInputValue] = useState("");
 
-  // event khud hi as a perameter ata hai hmko bo recive krna hot hota hai jaise niche kiya hai(event). 
-  // ab target.value mai puri ki puri input field agyi haior agr hm isme .value lgate hai mtlb event.target.value mai input field mai jo text likha hai bo agyi hoti hai.
-  //  event ek object hota hai yani key or value.
+
   function getNewValue(event) {
     setnewInputValue(event.target.value)
     console.log("rashi" + newInputValue)
@@ -27,13 +23,6 @@ function App() {
     setData(event.target.value);
   }
 
-  // jo setdata likha hai data ek variable name hai or us variable mai hm jo bhi (event.taget.value)
-  // mai mtlb jo input mai text hai bo set kr rhe hai fir button click krne pr maine ise aleet krvaya hai.
-  // .................................................................................
-  //  setUpdate hmnse ek or state li hai uper kyuki hme 2 jgah pr changes krne hai hai  isle 2 state use krte hai
-  // jo input mai hm likhtre hai usko data  bala variable mai store kiya fir jb btn click kiya to
-  //  mujhe bo update variable mai dalna hai ab 2nd state kam kregi to data ki value SetUpdate mai daal di 
-  // jaise ki niche likha hai fir ise tasklist mai ek naya variable se lena hai taki bo task list mai dikhe.
   function btnclick() {
     setarray([...array, data]);
     setData("")
@@ -89,7 +78,6 @@ else {
   // change in input feild in TaskList component 
 
   function clicked(id) {
-    // console.log("id:-" + id)
     setclickedInput(id)
   }
 
@@ -97,14 +85,11 @@ else {
   // function for tick click..........
 
   function dubbleClicked(id) {
-    // console.log("i dclicked"+ id)
     var newValueArray = [...array]
     console.log("abs" + newInputValue)
     newValueArray[id] = newInputValue
-    //  console.log("abc@:-"+ newEditValue)
     setarray(newValueArray)
     setclickedInput("")
-    // console.log("kavita="+ newEditValue)
   }
 
 
