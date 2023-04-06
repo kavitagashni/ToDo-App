@@ -1,7 +1,6 @@
 import './App.css';
 import TaskList from "./components/TaskList";
 import CompletedTask from "./components/CompletedTasks";
-import SecondComp from "./components/PrecticeTask";
 import { useState } from 'react';
 import completedTask from './components/CompletedTasks';
 
@@ -31,19 +30,19 @@ function App() {
 
   //  dalete task for taskList or Complete Task..............
   function deleteTask(id, listType) {
-    if (listType == "xyz"){
+    if (listType == "xyz") {
       if (window.confirm("Are you sure you want to delete Task?")) {
         const newList = array.filter((ele, i) => id !== i)
         setarray(newList)
       }
     }
-else {
+    else {
       if (window.confirm("Are you sure you want to delete Task?")) {
         const newList = taskComplete.filter((ele, i) => id !== i)
         settaskComplete(newList)
       }
     }
-}
+  }
 
 
 
@@ -56,7 +55,7 @@ else {
     setarray(checkList)
 
     const ditList = array.filter((del, i) => { return id == i })
-    settaskComplete([...taskComplete, ...ditList])
+    settaskComplete([...taskComplete, ...ditList]);
 
   }
 
@@ -95,20 +94,20 @@ else {
 
 
 
-  return (<div className="App">
-    <h1 className="app-header">Welcome to your To-Do List</h1>
-    <div className="container">
-      <div className="add-task">
-        <input type="text" className="display" value={data} onChange={handleChange} placeholder="Add a new task" />
-        <button className='add' onClick={btnclick}>Add</button>
-      </div>
-      <div className='tasks-row'>
-        <TaskList task1={array} delete={deleteTask} checkbox={checkboxClick} editClick={clicked} saveClick={dubbleClicked} clickOnInput={clickedInput} getNewValue={getNewValue} />
-        <CompletedTask task2={taskComplete} undo={undofunction} delete={deleteTask} />
-        <SecondComp />
+  return (
+    <div className="App">
+      <h1 className="app-header">Welcome to your To-Do List</h1>
+      <div className="container">
+        <div className="add-task">
+          <input type="text" className="display" value={data} onChange={handleChange} placeholder="Add a new task" />
+          <button className='add' onClick={btnclick}>Add</button>
+        </div>
+        <div>
+          <TaskList task1={array} delete={deleteTask} checkbox={checkboxClick} editClick={clicked} saveClick={dubbleClicked} clickOnInput={clickedInput} getNewValue={getNewValue} />
+          <CompletedTask task2={taskComplete} undo={undofunction} delete={deleteTask} />
+        </div>
       </div>
     </div>
-  </div>
   );
 }
 

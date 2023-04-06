@@ -1,5 +1,4 @@
 function CompletedTask(props) {
-    console.log("props"+props)
     return (
         <div className="completed-task">
             <h3 className="task-list-header">completed Tasks</h3>

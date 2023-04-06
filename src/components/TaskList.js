@@ -9,7 +9,7 @@ function TaskList(props) {
             {props.task1.map((arrayItem, i) => {
                 return (
                     <div className="tast-list-item" key={i}>
-                        <input className="checkbox" type="text" onClick={() => props.checkbox(i)} />
+                        <input className="checkbox" type="checkbox" onClick={() => props.checkbox(i)} />
                         { props.clickOnInput === i?
                             <div className="input-feild">
                                 <input type="text" placeholder="Add Task" defaultValue={arrayItem} onChange={props.getNewValue} />
